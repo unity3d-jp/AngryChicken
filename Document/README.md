@@ -509,3 +509,8 @@ Image>back ground>Skyをシーンに配置します。その後、**position(0,0
 
 #エクストラ
 
+本プロジェクトの小技
+
+1.  Playerをプレハブ化し、シーンのSlingshotのSpawnPlayerのPlayerPrefabにアタッチすると弾発射後一定時間で弾が補充される。
+2.  SlingShotのSlinhshotコンポーネントのMaxPowerとMinPowerは、引ける最大値と弾が発射出来る最小値
+3.  spriteのpacktagを空白以外に設定しておくと、メニュー>Edit>ProjectSettingsでsprite packerをEnable for Buildsと設定すると、ビルド時テクスチャをパックしドローコールを削減してくれる。（同一タグでマージする）  パッキング前はドローコール18だが、[パッキング後](ドローコール.jpg)は…
