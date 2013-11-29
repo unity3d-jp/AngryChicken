@@ -1,2 +1,4 @@
-AngryChicken
+AngryChicken2D
 ============
+
+某怒る鳥を模したゲームを作るセット。
