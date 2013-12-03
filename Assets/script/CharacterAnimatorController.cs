@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharacterAnimatiorController : MonoBehaviour
+public class CharacterAnimatorController : MonoBehaviour
 {
 	void OnCollisionEnter2D(Collision2D col)
 	{
