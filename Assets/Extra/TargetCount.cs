@@ -1,22 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TargetCount : MonoBehaviour
+
+namespace AngryChicken2D
 {
-	public int count;
-	GameObject[] objects;
-
-	public float interval = 3;
-
-	float nextTime;
-
-	void Update()
+	public class TargetCount : MonoBehaviour
 	{
-		if (Time.time > nextTime)
+		public int count;
+		GameObject[] objects;
+
+		public float interval = 3;
+
+		float nextTime;
+
+		void Update()
 		{
-			objects = GameObject.FindGameObjectsWithTag("Target");
-			count = objects.Length;
-			nextTime += interval;
+			if (Time.time > nextTime)
+			{
+				objects = GameObject.FindGameObjectsWithTag("Target");
+				count = objects.Length;
+				nextTime += interval;
+			}
 		}
 	}
 }
