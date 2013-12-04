@@ -1,18 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BackgroundRender : MonoBehaviour
+namespace AngryChicken2D.Experiment
 {
-	public RenderTexture texture{ get; private set; }
 
-	void Awake()
+	public class BackgroundRender : MonoBehaviour
 	{
-		texture = new RenderTexture(Screen.width, Screen.height, 24);
-		camera.targetTexture = texture;
-	}
+		public RenderTexture texture{ get; private set; }
 
-	void OnPostRender()
-	{
-		gameObject.SetActive(false);
+		void Awake()
+		{
+			texture = new RenderTexture(Screen.width, Screen.height, 24);
+			texture.enableRandomWrite = false;
+			camera.targetTexture = texture;
+		}
+
+		void OnPostRender()
+		{
+			gameObject.SetActive(false);
+		}
 	}
 }
