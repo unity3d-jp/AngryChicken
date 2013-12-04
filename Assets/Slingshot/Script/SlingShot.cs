@@ -33,8 +33,6 @@ namespace AngryChicken2D
 		public GameObject
 			catchObject;
 
-		public AudioClip audio;
-
 		void Update()
 		{
 			Vector2 slingShotPos = transform.position;
@@ -67,7 +65,6 @@ namespace AngryChicken2D
 				{
 					catchObject.rigidbody2D.isKinematic = false;
 					catchObject.rigidbody2D.AddForce(diff * power);
-					AudioSource.PlayClipAtPoint(audio, Vector3.zero);
 				}
 
 				GetComponent<TraceCatchObject>().enabled = false;
