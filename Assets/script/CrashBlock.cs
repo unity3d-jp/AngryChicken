@@ -16,11 +16,10 @@ public class CrashBlock : MonoBehaviour
 		if (m_hp < 0)
 		{
 			Destroy(gameObject);
-			Object effect = GameObject.Instantiate(
+			GameObject.Instantiate(
 					m_Effect, 
 					transform.position, 
 					Quaternion.identity);
-			DestroyObject(effect, 1.5f);
 		}
 	}
 }
