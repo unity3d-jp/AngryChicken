@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace AngryChicken2D.Experiment
+namespace AngryChicken2D
 {
 
 	public class UpdateTexture : MonoBehaviour

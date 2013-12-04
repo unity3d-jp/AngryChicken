@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LookatSprite : MonoBehaviour
+namespace AngryChicken2D
 {
-	public Transform target;
 
-	void FixedUpdate()
+	public class LookatSprite : MonoBehaviour
 	{
-		Vector2 diff = transform.position - target.position;
-		float angle = Vector2.Angle(Vector2.right, diff.normalized);
+		public Transform target;
+
+		void FixedUpdate()
+		{
+			Vector2 diff = transform.position - target.position;
+			float angle = Vector2.Angle(Vector2.right, diff.normalized);
 		
-		angle = (diff.y < 0) ? angle = 360 - angle : angle;
-		transform.localEulerAngles = new Vector3(0, 0, angle);
+			angle = (diff.y < 0) ? angle = 360 - angle : angle;
+			transform.localEulerAngles = new Vector3(0, 0, angle);
+		}
 	}
+
 }
