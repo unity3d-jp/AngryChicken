@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// Sling controller.
-/// </summary>
 [RequireComponent(typeof(SlingShot))]
-public class SlingController : MonoBehaviour
+public class TraceCatchObject : MonoBehaviour
 {
 	public GameObject pick;
 	private SlingShot slingshot;
