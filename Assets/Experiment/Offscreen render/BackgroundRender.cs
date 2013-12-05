@@ -6,11 +6,15 @@ namespace AngryChicken2D
 
 	public class BackgroundRender : MonoBehaviour
 	{
+		[Range(1, 10)]
+		public int
+			scale = 1;
+
 		public RenderTexture texture{ get; private set; }
 
 		void Awake()
 		{
-			texture = new RenderTexture(Screen.width, Screen.height, 24);
+			texture = new RenderTexture(Screen.width / scale, Screen.height / scale, 24);
 			texture.enableRandomWrite = false;
 			camera.targetTexture = texture;
 		}

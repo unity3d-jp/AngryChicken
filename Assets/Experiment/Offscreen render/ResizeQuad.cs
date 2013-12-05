@@ -3,7 +3,6 @@ using System.Collections;
 
 namespace AngryChicken2D
 {
-
 	public class ResizeQuad : MonoBehaviour
 	{
 		public Camera targetCamera;
@@ -15,6 +14,4 @@ namespace AngryChicken2D
 			transform.localScale = v3;
 		}
 	}
-
-	
 }
