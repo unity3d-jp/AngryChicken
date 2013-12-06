@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: f3f8bc41370294eb79e7ecc823341160
+labels:
+- Effect
 TextureImporter:
   serializedVersion: 2
   mipmaps:
