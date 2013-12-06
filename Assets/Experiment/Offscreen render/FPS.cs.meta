@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 6a344759ed2fd4242926a91fe832aaff
+labels:
+- Offscreen
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []

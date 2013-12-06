@@ -1,5 +1,8 @@
 fileFormatVersion: 2
 guid: bab3eab7cd8e344aabc1e953f7e87780
+labels:
+- Sprite
+- Player
 TextureImporter:
   serializedVersion: 2
   mipmaps:

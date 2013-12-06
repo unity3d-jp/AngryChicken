@@ -1,5 +1,8 @@
 fileFormatVersion: 2
 guid: 3cf1b4a351eab48b08c6c5d88f760920
+labels:
+- Slingshot
+- Sprite
 TextureImporter:
   serializedVersion: 2
   mipmaps:

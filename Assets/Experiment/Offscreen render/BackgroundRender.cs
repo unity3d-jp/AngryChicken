@@ -3,7 +3,6 @@ using System.Collections;
 
 namespace AngryChicken2D
 {
-
 	public class BackgroundRender : MonoBehaviour
 	{
 		[Range(1, 10)]
@@ -16,7 +15,10 @@ namespace AngryChicken2D
 		{
 			texture = new RenderTexture(Screen.width / scale, Screen.height / scale, 24);
 			texture.enableRandomWrite = false;
+			texture.antiAliasing = 4;
 			camera.targetTexture = texture;
+
+			DontDestroyOnLoad(gameObject);
 		}
 
 		void OnPostRender()

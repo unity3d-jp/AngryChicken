@@ -1,5 +1,8 @@
 fileFormatVersion: 2
 guid: 49b54e00aa8f1482686bdfc8e6ca7a11
+labels:
+- Slingshot
+- GameSystem
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []

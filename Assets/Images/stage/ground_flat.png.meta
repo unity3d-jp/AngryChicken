@@ -1,5 +1,9 @@
 fileFormatVersion: 2
 guid: b0690f0d76c22422f87e6af600458f52
+labels:
+- background
+- Sprite
+- Stage
 TextureImporter:
   serializedVersion: 2
   mipmaps:
