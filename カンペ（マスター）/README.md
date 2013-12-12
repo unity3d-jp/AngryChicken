@@ -604,3 +604,13 @@ distanceに適当な距離を設定する。
 
 現状developer previewなので、Textureをtexturepacker等でまとめてしまう方が有効。
 http://terasur.blog.fc2.com/blog-entry-621.html
+
+###シーンの切替
+
+複数作ったステージを切り替える
+
+1.  File>Build Settingsを開く
+2.  切り替えるシーン一覧を配置する（シーンファイルをドラッグ＆ドロップ）
+3.  シーン切替したいタイミングで[Application.LoadLevel("シーン名")](http://docs-jp.unity3d.com/Documentation/ScriptReference/Application.LoadLevel.html)を呼ぶ
+
+![シーン切替](シーン切替.jpg)
