@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 namespace AngryChicken2D
 {
 	public class TargetCount : MonoBehaviour
 	{
 		public int count;
-		GameObject[] objects;
-
 		public float interval = 3;
 
 		float nextTime;
@@ -17,8 +14,7 @@ namespace AngryChicken2D
 		{
 			if (Time.time > nextTime)
 			{
-				objects = GameObject.FindGameObjectsWithTag("Target");
-				count = objects.Length;
+				count = GameObject.FindGameObjectsWithTag("Target").Length;
 				nextTime += interval;
 			}
 		}
