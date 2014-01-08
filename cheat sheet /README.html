@@ -130,71 +130,75 @@ pre code {
 
 </style><style type="text/css">
 body {
-	font-family: "Geneva", Arial, sans-serif;
-	font-size: 13px;
-	margin: 10px;
-}
-
-a, a:visited {
-	color: #09c;
-}
-
-a:hover {
-	color: #336699;
-	text-decoration: none;
+	background-color: #fff;
+	padding: 15px;
+	font-family: Optima, Arial, Helvetica, sans-serif;
+	margin: 0px auto auto auto;
+	color: #424849;
+	font-size: 12px;
 }
 
 h1 {
-	margin: 0px 0px 10px;	
+	font-size: 24px;
 	font-weight: bold;
+	color: #0f3753;
+	width: auto;
+	padding: 0px 0 5px 0;
+	margin: auto;
+	text-decoration: none;
 }
 
 h2 {
-	border-bottom: 2px dotted #ccc;
-	margin: 5px 0px 15px;	
+	font-size: 20px;
+	font-weight: bold;
+	color: #0f3753;
+	width: auto;
+	padding: 5px 0 5px 0;
+	margin: auto;
+	text-decoration: none;
 }
 
-h6 {
-	color: #09c;
+h3 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #0464a1;
+	width: auto;
+	padding: 5px 0 5px 0px;
+	margin: auto;
+	text-decoration: none;
 }
 
-blockquote {
-	font-family: "Georgia", Courier New, courier, sans-serif;
-	background: #efefef;
-	padding: 5px 10px;
-	border: solid 1px #ddd;
-	margin: 15px;
-	-webkit-border-radius:6px;
-	-moz-border-radius:6px;
-	border-radius:6px;
-	color:  #333;
-	
-}
-
-ul, ol {
-	margin-bottom: 15px;
+h4, h5, h6 {
+    font-size:14px;
 }
 
 li {
-	padding: 3px;
+    font-size: 13px;
 }
 
-
-
-code {
-	background-color: #f1f1f1;
-    color: #336699;
-}
-
-pre {
-	background-color: #f1f1f1;
-}
-
-pre > code {
+p {
+	font-size: 13px;
+	text-align: justify;
+	padding: 2px;
 	margin: 0px;
-	padding: 5px;
-	border: 0px;
-	background-color: #f1f1f1;
+}
+
+
+td {
+	text-align: center;
+	padding: 3px;
+	border-bottom: 2px #fff solid;
+}
+
+th {
+	background-color: #333333;
+	padding: 3px;
+	color: #FFFFFF;
+}
+
+blockquote {
+    margin: 10px 0px 10px;
+    padding: 5px 10px;
 }
 
 
@@ -278,6 +282,19 @@ public class CrashBlock : MonoBehaviour
                     Quaternion.identity);
             DestroyObject(effect, 1.5f);
         }
+    }
+}
+</code></pre>
+
+<h3>Script D</h3>
+
+<pre><code>using UnityEngine;
+
+public class CharacterAnimatorController : MonoBehaviour
+{
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        GetComponent&lt;Animator&gt;().SetTrigger(&quot;Hit&quot;);
     }
 }
 </code></pre>
