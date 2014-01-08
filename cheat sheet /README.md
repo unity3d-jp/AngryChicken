@@ -72,6 +72,9 @@ InspectorのTextureTypeをSpriteに変更し、Apply。
 **メニュー　→　File　→　Save Scene** を選択。名前は「**stage 1**」とします。
 
 ##世界に物を配置する
+カメラの設定。
+
+
 
 まずは、地面の作成から。
 
