@@ -7,7 +7,7 @@ namespace AngryChicken2D
 	{
 		public Transform target;
 
-		void FixedUpdate()
+		void OnWillRenderObject()
 		{
 			Vector2 diff = transform.position - target.transform.position;
 			float angle = Vector2.Angle(Vector2.right, diff.normalized);
