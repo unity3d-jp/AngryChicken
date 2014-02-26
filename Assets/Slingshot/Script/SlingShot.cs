@@ -35,27 +35,35 @@ namespace AngryChicken2D
 
 		void Update()
 		{
+			TouchControl();
+		}
+
+		void TouchControl()
+		{
 			Vector2 slingShotPos = transform.position;
 
+			// put
 			if (Input.GetMouseButtonDown(0))
 			{
 				Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
 				Collider2D col = Physics2D.OverlapCircle(pos, 1);
-
+				
 				if (col != null && col.CompareTag("Player") && col.rigidbody2D.isKinematic)
 				{
 					catchObject = col.gameObject;
 					GetComponent<TraceCatchObject>().enabled = true;
 				}
 			}
-		
+
+			// move
 			if (catchObject != null && Input.GetMouseButton(0))
 			{
 				Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
 				Vector2 diff = pos - slingShotPos;
 				catchObject.transform.position = Vector2.ClampMagnitude(diff, maxPower) + slingShotPos;
 			}
-		
+
+			// release
 			if (catchObject != null && Input.GetMouseButtonUp(0))
 			{
 				Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
@@ -66,7 +74,7 @@ namespace AngryChicken2D
 					catchObject.rigidbody2D.isKinematic = false;
 					catchObject.rigidbody2D.AddForce(diff * power);
 				}
-
+				
 				GetComponent<TraceCatchObject>().enabled = false;
 				catchObject = null;
 			}

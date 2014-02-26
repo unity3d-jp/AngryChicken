@@ -3,11 +3,6 @@ using UnityEngine;
 
 namespace AngryChicken2D
 {
-
-
-/// <summary>
-/// Spawn player.
-/// </summary>
 	public class SpawnPlayer : MonoBehaviour
 	{
 		public GameObject playerPrefab;
@@ -35,6 +30,16 @@ namespace AngryChicken2D
 					GameObject.Instantiate(playerPrefab, transform.position, Quaternion.identity);
 					canSpawn = false;
 				}
+
+
+				if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("Horizontal") < 0)
+				{
+					GameObject.Instantiate(playerPrefab, transform.position, Quaternion.identity);
+					canSpawn = false;
+				}
+
+
+
 			} else
 			{
 				if (catchObject == null)
