@@ -48,7 +48,7 @@ namespace AngryChicken2D
 				Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
 				Collider2D col = Physics2D.OverlapCircle(pos, 1);
 				
-				if (col != null && col.CompareTag("Player") && col.rigidbody2D.isKinematic)
+				if (col != null && col.CompareTag("Player") && col.GetComponent<Rigidbody2D>().isKinematic)
 				{
 					catchObject = col.gameObject;
 					GetComponent<TraceCatchObject>().enabled = true;
@@ -71,8 +71,8 @@ namespace AngryChicken2D
 				
 				if (diff.magnitude > minPower)
 				{
-					catchObject.rigidbody2D.isKinematic = false;
-					catchObject.rigidbody2D.AddForce(diff * power);
+					catchObject.GetComponent<Rigidbody2D>().isKinematic = false;
+					catchObject.GetComponent<Rigidbody2D>().AddForce(diff * power);
 				}
 				
 				GetComponent<TraceCatchObject>().enabled = false;

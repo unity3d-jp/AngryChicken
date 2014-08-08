@@ -31,17 +31,12 @@ namespace AngryChicken2D
 					canSpawn = false;
 				}
 
-
 				if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("Horizontal") < 0)
 				{
 					GameObject.Instantiate(playerPrefab, transform.position, Quaternion.identity);
 					canSpawn = false;
 				}
-
-
-
-			} else
-			{
+			} else {
 				if (catchObject == null)
 				{
 					catchObject = slingShot.catchObject;
