@@ -1,66 +1,57 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AngryChicken2D
 {
-	public class SpawnPlayer : MonoBehaviour
+	[RequireComponent(typeof(SlingShot)), DisallowMultipleComponent]
+	public class SpawnPlayer : MonoBehaviour, ISlingshotReleaseEvent
 	{
-		public GameObject playerPrefab;
-		bool canSpawn = false;
-		SlingShot slingShot;
-		GameObject catchObject;
+		GameObject currentPlayer;
 
-		[Range(3, 30)]
-		public int
-			respawnTime = 5;
+		[SerializeField]
+		GameObject playerBaseInstance;
+
+		void Awake()
+		{
+			if( playerBaseInstance == null ){
+				return;
+			}
+
+			playerBaseInstance.SetActive(false);
+		}
 
 		void Start()
 		{
-			slingShot = GetComponent<SlingShot>();
-			if (playerPrefab == null)
-				enabled = false;
-		}
-	
-		void Update()
-		{
-			if (canSpawn)
-			{
-				if (Input.GetKeyDown(KeyCode.Mouse0))
-				{
-					GameObject.Instantiate(playerPrefab, transform.position, Quaternion.identity);
-					canSpawn = false;
-				}
-
-				if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("Horizontal") < 0)
-				{
-					GameObject.Instantiate(playerPrefab, transform.position, Quaternion.identity);
-					canSpawn = false;
-				}
-			} else {
-				if (catchObject == null)
-				{
-					catchObject = slingShot.catchObject;
-				}
-
-				if (catchObject != null && Vector2.Distance(catchObject.transform.position, transform.position) > slingShot.maxPower * 1.3f)
-				{
-					StartCoroutine(Shooting(catchObject));
-					catchObject = null;
-				}
-			}
+			CreatePlayer();
 		}
 
-		IEnumerator Shooting(GameObject obj)
+		public void CreateNewPlayer(Button button)
 		{
-			DestroyObject(obj, 20);
-			yield return new WaitForSeconds(respawnTime);
-			canSpawn = true;
+			if( currentPlayer != null || playerBaseInstance == null)
+				return;
+			
+			button.gameObject.SetActive(false);
+
+			CreatePlayer();
 		}
-	
-		void OnGUI()
+
+		void CreatePlayer()
 		{
-			if (canSpawn)
-				GUILayout.Label("push to next shoot");
+			if( playerBaseInstance == null )
+				return;
+
+			currentPlayer = (GameObject) GameObject.Instantiate(
+				playerBaseInstance, 
+				transform.position, 
+				Quaternion.identity);
+			
+			currentPlayer.SetActive(true);
+		}
+
+		public void OnReleasePlayer(GameObject player)
+		{
+			currentPlayer = null;
 		}
 	}
 }

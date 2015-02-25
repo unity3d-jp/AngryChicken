@@ -1,23 +1,24 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 public class CrashBlock : MonoBehaviour
 {
-	public float m_Strength, m_hp;
-	public GameObject m_Effect;
+	public float strength, hp;
+	public GameObject effect;
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		float damage = col.relativeVelocity.magnitude - m_Strength;
+		float damage = col.relativeVelocity.magnitude - strength;
 		if (damage > 0)
 		{
-			m_hp -= damage;
+			hp -= damage;
 		}
 
-		if (m_hp < 0)
+		if (hp < 0)
 		{
 			Destroy(gameObject);
 			GameObject.Instantiate(
-					m_Effect, 
+					effect, 
 					transform.position, 
 					Quaternion.identity);
 		}

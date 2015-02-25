@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: 9baf128e36b264e0f9df8e622c73bdef
 labels:
-- GameSystem
+- AngryChicken2D
+- Player
+- Target
 MonoImporter:
   serializedVersion: 2
   defaultReferences:

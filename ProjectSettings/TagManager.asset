@@ -41,11 +41,11 @@ TagManager:
   - name: back ground
     userID: 1
     uniqueID: 86231975
-    locked: 0
+    locked: 1
   - name: Default
     userID: 0
     uniqueID: 0
-    locked: 1
+    locked: 0
   - name: foreground
     userID: 2
     uniqueID: 1153284981

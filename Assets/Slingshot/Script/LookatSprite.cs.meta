@@ -3,6 +3,7 @@ guid: 2c18648d4323f4c4daafcd54d7d4667b
 labels:
 - Slingshot
 - GameSystem
+- AngryChicken2D
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []

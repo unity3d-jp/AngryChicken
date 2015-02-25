@@ -1,23 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 namespace AngryChicken2D
 {
-	[RequireComponent(typeof(SlingShot))]
-	public class TraceCatchObject : MonoBehaviour
+	[RequireComponent(typeof(SlingShot)), DisallowMultipleComponent]
+	public class TraceCatchObject : MonoBehaviour, ISlingshotDragEvent
 	{
 		public GameObject pick;
-		private SlingShot slingshot;
 
-		void Start()
+		public void OnDragPlayer(GameObject target)
 		{
-			slingshot = GetComponent<SlingShot>();
-			enabled = false;
-		}
-
-		void Update()
-		{
-			GameObject target = slingshot.catchObject;
 			Vector2 diff = target.transform.position - transform.position;
 			pick.transform.position = (Vector2)target.transform.position + diff.normalized * 0.2f;
 		}

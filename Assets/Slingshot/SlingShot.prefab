@@ -27,8 +27,8 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
-  - 50: {fileID: 5000000}
-  - 114: {fileID: 11400000}
+  - 50: {fileID: 5008178}
+  - 114: {fileID: 11457606}
   m_Layer: 0
   m_Name: SlingShot
   m_TagString: Respawn
@@ -82,7 +82,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 212: {fileID: 21200006}
   m_Layer: 0
-  m_Name: Pach0_0
+  m_Name: Patch Frame(front)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ GameObject:
   - 4: {fileID: 400010}
   - 212: {fileID: 21200008}
   m_Layer: 0
-  m_Name: Pach3_0
+  m_Name: Patch Frame(back)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400002}
   m_RootOrder: 3
---- !u!50 &5000000
+--- !u!50 &5000002
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: .100000001
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!50 &5008178
 Rigidbody2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -196,34 +211,6 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!50 &5000002
-Rigidbody2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: .100000001
-  m_GravityScale: 1
-  m_FixedAngle: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcec2d24a45c14b84a6a4eca44666ba6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 100000, guid: 532f2666c0f8c401ebe6deaeab8b3d2a, type: 2}
-  respawnTime: 5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,10 +234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e33685814f0a475997543def7334fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 300
+  power: 350
   maxPower: 2.0999999
   minPower: 1.15999997
-  catchObject: {fileID: 0}
+  catchedPlayer: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,6 +274,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 400002}
+--- !u!114 &11457606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcec2d24a45c14b84a6a4eca44666ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBaseInstance: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -405,9 +404,9 @@ SpringJoint2D:
   m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_CollideConnected: 0
-  m_ConnectedRigidBody: {fileID: 5000000}
+  m_ConnectedRigidBody: {fileID: 5008178}
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: .0691151619, y: .0604754686}
   m_Distance: .300000012
   m_DampingRatio: 0
   m_Frequency: 10
