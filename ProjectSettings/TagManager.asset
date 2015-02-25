@@ -41,7 +41,7 @@ TagManager:
   - name: back ground
     userID: 1
     uniqueID: 86231975
-    locked: 1
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0

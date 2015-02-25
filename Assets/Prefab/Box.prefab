@@ -26,8 +26,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.7199993, y: -1.63, z: 0}
-  m_LocalScale: {x: .281718999, y: .281720012, z: 1}
+  m_LocalPosition: {x: 7.0999999, y: -2.9000001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,8 +55,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.50018501, y: 2.50766063}
-  m_Center: {x: 6.77039407e-06, y: -.00373851345}
+  m_Size: {x: 1.27999997, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,9 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9baf128e36b264e0f9df8e622c73bdef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Strength: 4
-  m_hp: 5
-  m_Effect: {fileID: 100002, guid: 097882588325841b197ea5cb456193e3, type: 2}
+  strength: 3
+  hp: 5
+  effect: {fileID: 100002, guid: 097882588325841b197ea5cb456193e3, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
